@@ -246,7 +246,7 @@ function validateInputMinute(value) {
 function calculateRowTotal(categoryRecord) {
     let firstTimePair = categoryRecord.childNodes[0].childNodes;
     let secondTimePair = categoryRecord.childNodes[2].childNodes;
-    categoryRecord.childNodes[1].childNodes[1].innerHTML = "- " + parsePairs(firstTimePair, secondTimePair) + "h -";
+    categoryRecord.childNodes[1].childNodes[1].innerHTML = "- " + parsePairs(firstTimePair, secondTimePair).toFixed(1) + "h -";
 }
 
 // Parses pairs of time and calls for conversion function
