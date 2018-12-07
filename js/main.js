@@ -60,7 +60,7 @@ function createCategory() {
 
     let totalCategoryHours = document.createElement('div');
     totalCategoryHours.className = "category__totalHours";
-    totalCategoryHours.innerHTML = "Total " + category.childNodes[0].childNodes[0].data + " Hours: " + 0;
+    totalCategoryHours.innerHTML = "Total " + category.childNodes[0].childNodes[0].data + " Hours: " + "0.0";
     category.appendChild(totalCategoryHours);
 
     // Create Record Button & Add event listener to recordTime
