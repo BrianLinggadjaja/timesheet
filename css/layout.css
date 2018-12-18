@@ -61,6 +61,13 @@ h2 {
     font-size: 2rem;
 }
 
+.time {
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+    margin: 1rem auto;
+}
+
 .category {
     box-shadow: 1px 2px 5px rgba(25, 25, 25, 0.8);
     border-radius: 4px;
@@ -114,7 +121,7 @@ h2 {
 .category__time {
     display: inline-block;
     text-align: center;
-    margin: 0 2rem;
+    margin: 0 1rem;
 }
 
 .category__timePair {

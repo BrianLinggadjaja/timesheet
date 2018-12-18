@@ -1,10 +1,22 @@
+window.onload = function getData() {
+    document.getElementById("timeSheet").innerHTML = localStorage.data;
+    console.log(localStorage)
+}
+
 // Date & Time
 setInterval(currentTime, 1000);
 function currentTime() {
     const hours = new Date().getHours();
     const minutes = new Date().getMinutes();
-    
-    document.getElementById("time").innerHTML = hours + ':' + minutes;
+
+    document.getElementById("time").innerHTML = convertTo12Hour(hours, minutes);
+}
+
+// Storing Information
+setInterval(storeData, 3000);
+function storeData() {
+    localStorage.data = document.getElementById("timeSheet").innerHTML;
+    console.log("Store")
 }
 
 function getCurrentDay() {
@@ -52,10 +64,6 @@ function createCategory() {
     // Initialize First Records
     for (let i = 0; i < 5; i+=1) {
         recordTime(categoryContent);
-    }
-
-    for (i = 0; i < categoryContent.childNodes.length; i+=1) {
-        console.log(categoryContent.childNodes[i].childNodes[1].childNodes[1].childNodes[0].data.replace(/[^0-9]/g,''));
     }
 
     let totalCategoryHours = document.createElement('div');
@@ -107,7 +115,7 @@ function rowTotal(categoryRecord) {
     rowTime.appendChild(totalRowHeader);
 
     let totalRowTime = document.createElement('div');
-    totalRowTime.innerHTML = "- " + "0h" + " -";
+    totalRowTime.innerHTML = "- " + "0.0h" + " -";
     rowTime.appendChild(totalRowTime);
 }
 
@@ -236,7 +244,7 @@ function validateInputMinute(value) {
     } else if (value > 59) {
         return 59;
     } else if (value < 10 && value > 0) {
-        return value.replace(value + 0, value + 0);
+        return value.replace(value, 0 + value);
     } else {
         return value;
     }
@@ -276,6 +284,20 @@ function parsePairs(firstTimePair, secondTimePair) {
     return calculateTimeDifference(firstPairTimeIn, firstPairTimeOut) + calculateTimeDifference(secondPairTimeIn, secondPairTimeOut);
 }
 
+function convertTo12Hour(hours, minutes) {
+    if (minutes < 10) {
+        minutes = 0 + '' + minutes;
+    }
+
+    if (hours > 12) {
+        return (hours-12) + ":" + minutes + " PM";
+    } else if (hours === 12) {
+        return hours + ":" + minutes + " PM";
+    } else {
+        return hours + ":" + minutes + " AM";
+    }
+}
+
 function convertTo24Hour(hours, minutes, timeFormat) {
     // Converts minutes to hour decimal form rounded to nearest tenth
     let minuteDecimal = Math.round((parseInt(minutes)/60) * 10);
@@ -285,17 +307,15 @@ function convertTo24Hour(hours, minutes, timeFormat) {
         if (hours === "12") {
             return 12 + (minuteDecimal / 10);
         } else if (hours === "00") {
-            return parseInt(hours) + (minuteDecimal / 10);
+            return parseInt(hours) + parseFloat(minuteDecimal / 10);
         } else {
-            return (parseInt(hours) + 12) + (minuteDecimal / 10);
+            return (parseInt(hours) + 12) + parseFloat(minuteDecimal / 10);
         }
     } else if (timeFormat == "AM") {
         if (hours === "12") {
             return 0 + (minuteDecimal / 10);
-        } else if (hours === "00") {
-            return parseInt(hours) + (minuteDecimal / 10);
         } else {
-            return parseInt(hours) + (minuteDecimal / 10);
+            return parseInt(hours) + parseFloat(minuteDecimal / 10);
         }
     }
 }
