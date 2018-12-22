@@ -1,6 +1,6 @@
 window.onload = function getData() {
-    document.getElementById("timeSheet").innerHTML = localStorage.data;
-    console.log(localStorage)
+    document.getElementById("timeSheet").innerHTML = JSON.parse(localStorage.data);
+    console.log("Local Storage:", JSON.parse(localStorage.data));
 }
 
 // Date & Time
@@ -15,8 +15,11 @@ function currentTime() {
 // Storing Information
 setInterval(storeData, 3000);
 function storeData() {
-    localStorage.data = document.getElementById("timeSheet").innerHTML;
-    console.log("Store")
+    localStorage.data = JSON.stringify(document.getElementById("timeSheet").innerHTML);
+}
+
+function storeValues() {
+    localStorage.value = "test";
 }
 
 function getCurrentDay() {
@@ -85,6 +88,8 @@ function calculateCategoryHours(relativeNode) {
     let categoryContent = relativeNode.parentNode.parentNode.parentNode.parentNode;
     let category = relativeNode.parentNode.parentNode.parentNode.parentNode.parentNode;
     let totalCategoryHours = relativeNode.parentNode.parentNode.parentNode.parentNode.parentNode.childNodes[2];
+
+    console.log(categoryContent);
 
     let totalCategoryTime = 0;
     for (i = 0; i < categoryContent.childNodes.length; i+=1) {
