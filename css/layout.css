@@ -68,6 +68,13 @@ h2 {
     margin: 1rem auto;
 }
 
+.date {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 1rem auto;
+}
+
 .category {
     box-shadow: 1px 2px 5px rgba(25, 25, 25, 0.8);
     border-radius: 4px;

@@ -1,5 +1,10 @@
 window.onload = function getData() {
-    document.getElementById("timeSheet").innerHTML = localStorage.data;
+    if (localStorage.data === "undefined") {
+        document.getElementById("timeSheet").innerHTML = "";
+    } else {
+        document.getElementById("timeSheet").innerHTML = localStorage.data;
+    }
+    document.getElementById("date").innerHTML = getCurrentDay() + " " + getCurrentDate();
 }
 
 // Date & Time
@@ -13,13 +18,14 @@ function currentTime() {
 
 // Storing Information
 setInterval(storeData, 3000);
+console.log(localStorage.data)
 function storeData() {
     localStorage.data = document.getElementById("timeSheet").innerHTML;
 }
 
 function getCurrentDay() {
     const day = new Date().getDay();
-    const daySelection = ["Sun.", "Mon.", "Tues.", "Wed.", "Thurs.", "Fri.", "Sat."];
+    const daySelection = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     return daySelection[day];
 }
