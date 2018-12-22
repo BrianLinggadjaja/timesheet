@@ -1,6 +1,5 @@
 window.onload = function getData() {
-    document.getElementById("timeSheet").innerHTML = JSON.parse(localStorage.data);
-    console.log("Local Storage:", JSON.parse(localStorage.data));
+    document.getElementById("timeSheet").innerHTML = localStorage.data;
 }
 
 // Date & Time
@@ -15,11 +14,7 @@ function currentTime() {
 // Storing Information
 setInterval(storeData, 3000);
 function storeData() {
-    localStorage.data = JSON.stringify(document.getElementById("timeSheet").innerHTML);
-}
-
-function storeValues() {
-    localStorage.value = "test";
+    localStorage.data = document.getElementById("timeSheet").innerHTML;
 }
 
 function getCurrentDay() {
