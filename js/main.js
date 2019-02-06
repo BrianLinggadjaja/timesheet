@@ -1,6 +1,7 @@
 window.onload = function getData() {
-    if (localStorage.getItem("data") === null) {
+    if (localStorage.getItem("data") === null || localStorage.getItem("data").includes("undefined")) {
         document.getElementById("timeSheet").innerHTML = "";
+        localStorage.data = "";
     } else {
         document.getElementById("timeSheet").innerHTML = localStorage.data;
     }
