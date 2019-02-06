@@ -1,6 +1,8 @@
 # Timesheet
 
 ### Usage
+[Click here to visit Timesheet](https://brianlinggadjaja.github.io/timesheet/ "Timesheet") 
+
 Create a new category to start adding your timesheet. **TAB** through the category and enter hours for each day. 
 
 The format for each day is...
