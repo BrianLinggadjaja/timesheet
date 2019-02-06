@@ -17,7 +17,7 @@ function currentTime() {
 }
 
 // Storing Information
-setInterval(storeData, 10000);
+setInterval(storeData, 12000);
 function storeData() {
     localStorage.data = document.getElementById("timeSheet").innerHTML;
     document.getElementById("autosave").setAttribute("class", "autosave autosave--active")
