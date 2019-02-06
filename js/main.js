@@ -1,6 +1,7 @@
 window.onload = function getData() {
-    if (localStorage.data === "undefined") {
+    if (localStorage.getItem("data") === null || localStorage.getItem("data").includes("undefined")) {
         document.getElementById("timeSheet").innerHTML = "";
+        localStorage.data = "";
     } else {
         document.getElementById("timeSheet").innerHTML = localStorage.data;
     }
@@ -19,7 +20,7 @@ function currentTime() {
 // Storing Information
 setInterval(storeData, 3000);
 function storeData() {
-    localStorage.data = document.getElementById("timeSheet").innerHTML
+    localStorage.data = document.getElementById("timeSheet").innerHTML;
 }
 
 function getCurrentDay() {
