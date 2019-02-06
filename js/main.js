@@ -18,9 +18,8 @@ function currentTime() {
 
 // Storing Information
 setInterval(storeData, 3000);
-console.log(localStorage.data)
 function storeData() {
-    localStorage.data = document.getElementById("timeSheet").innerHTML;
+    localStorage.data = document.getElementById("timeSheet").innerHTML
 }
 
 function getCurrentDay() {
@@ -250,6 +249,7 @@ function validateInputMinute(value) {
     } else if (value > 59) {
         return 59;
     } else if (value < 10 && value > 0) {
+        value = parseFloat(value).toString();
         return value.replace(value, 0 + value);
     } else {
         return value;
