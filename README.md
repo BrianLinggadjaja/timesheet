@@ -1,5 +1,16 @@
 # Timesheet
 
+### Usage
+Create a new category to start adding your timesheet. **TAB** through the category and enter hours for each day. 
+
+The format for each day is...
+
+| Time | Break | Time |
+|------|-------|------|
+| **(time in) - (time out)** | ***(total daily hours)*** | **(time in) - (time out)** | 
+
+Total Category Hours will be displayed at the end of each category module.
+
 ### Version History
 #### v1.0.2 (Latest Version)
 - Fixed form validation for 0N minutes
