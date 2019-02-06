@@ -19,3 +19,4 @@
 - [ ] Functionality for hotkeys
 - [ ] New UI changes
 - [ ] Lots of customization
+- [ ] Mobile Version
