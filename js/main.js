@@ -13,14 +13,19 @@ setInterval(currentTime, 1000);
 function currentTime() {
     const hours = new Date().getHours();
     const minutes = new Date().getMinutes();
-
     document.getElementById("time").innerHTML = convertTo12Hour(hours, minutes);
 }
 
 // Storing Information
-setInterval(storeData, 3000);
+setInterval(storeData, 10000);
 function storeData() {
     localStorage.data = document.getElementById("timeSheet").innerHTML;
+    document.getElementById("autosave").setAttribute("class", "autosave autosave--active")
+    setTimeout(removeAutosaveMessage, 2500);
+}
+
+function removeAutosaveMessage() {
+    document.getElementById("autosave").setAttribute("class", "autosave");
 }
 
 function getCurrentDay() {
