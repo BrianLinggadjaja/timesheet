@@ -75,6 +75,40 @@ h2 {
     margin: 1rem auto;
 }
 
+.option {
+    padding: 0.25rem 0;
+}
+
+.option__button {
+    display: inline-block;
+}
+
+.option__button:hover button {
+    animation: shake 350ms;
+}
+
+@keyframes shake {
+    0% {transform: translateX(0);}
+    25% {transform: translateX(4px);}
+    50% {transform: translateX(-6px);}
+    75% {transform: translateX(3px);}
+    100% {transform: translateX(0);}
+}
+
+.button--create {
+    background-color: rgb(15, 180, 80);
+    color: rgb(245, 245, 245);
+    width: 18rem;
+    padding: 1rem 0;
+}
+
+.button--reset {
+    background-color: rgb(180, 0, 0);
+    color: rgb(245, 245, 245);
+    width: 18rem;
+    padding: 1rem 0;
+}
+
 .category {
     box-shadow: 1px 2px 5px rgba(25, 25, 25, 0.8);
     border-radius: 4px;

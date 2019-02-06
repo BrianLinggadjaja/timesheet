@@ -18,9 +18,8 @@ function currentTime() {
 
 // Storing Information
 setInterval(storeData, 3000);
-console.log(localStorage.data)
 function storeData() {
-    localStorage.data = document.getElementById("timeSheet").innerHTML;
+    localStorage.data = document.getElementById("timeSheet").innerHTML
 }
 
 function getCurrentDay() {
@@ -35,6 +34,15 @@ function getCurrentDate() {
     const date = new Date().getDate();
     
     return (month + 1) + '/' + date;
+}
+
+function resetAll() {
+    if (confirm("Do you want to reset EVERYTHING?")) {
+        document.getElementById("timeSheet").innerHTML = "";
+        localStorage.data = "";
+    } else {
+        return;
+    }
 }
 
 // Time Sheet Creation
@@ -250,6 +258,7 @@ function validateInputMinute(value) {
     } else if (value > 59) {
         return 59;
     } else if (value < 10 && value > 0) {
+        value = parseFloat(value).toString();
         return value.replace(value, 0 + value);
     } else {
         return value;
