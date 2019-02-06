@@ -16,7 +16,11 @@ Total Category Hours will be displayed at the end of each category module.
 ---
 
 ### Version History
-#### v1.0.2 (Latest Version)
+#### v1.0.3 (Latest Version: 02/05/2019) 
+- Changed border radius on option buttons
+- Added info button
+
+#### v1.0.2 
 - Fixed form validation for 0N minutes
 - Fixed undefined save
 - Adjusted option buttons
