@@ -40,3 +40,5 @@ Total Category Hours will be displayed at the end of each category module.
 - [ ] New UI changes
 - [ ] Lots of customization
 - [ ] Mobile Version
+- [ ] Timesheet dates
+- [ ] Easy Clock In & Clock Out functionality
