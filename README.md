@@ -16,7 +16,12 @@ Total Category Hours will be displayed at the end of each category module.
 ---
 
 ### Version History
-#### v1.0.4 (Latest Version: 02/06/2019) 
+#### v1.0.5 (Latest Version: 02/06/2019)
+- Added autosave message
+- Changed time & date font scaling
+- Changed autosave timer
+
+#### v1.0.4
 - Added check and clear for null and undefined timesheets
 - Added auto-clear functionality for users who currently have an undefined timesheet
 
