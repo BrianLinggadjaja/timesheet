@@ -13,6 +13,8 @@ The format for each day is...
 
 Total Category Hours will be displayed at the end of each category module.
 
+---
+
 ### Version History
 #### v1.0.2 (Latest Version)
 - Fixed form validation for 0N minutes
