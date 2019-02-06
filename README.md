@@ -18,7 +18,7 @@ Total Category Hours will be displayed at the end of each category module.
 ### Version History
 #### v1.0.4 (Latest Version: 02/06/2019) 
 - Added check and clear for null and undefined timesheets
-- Added auto clear functionality for users who currently have an undefined timesheet
+- Added auto-clear functionality for users who currently have an undefined timesheet
 
 #### v1.0.3
 - Changed border radius on option buttons
