@@ -20,6 +20,8 @@ Total Category Hours will be displayed at the end of each category module.
 - Changed border radius on option buttons
 - Added info button
 - Changed info button link to README
+- Moved link from info to the parent div
+- Reduced padding on info
 
 #### v1.0.2 
 - Fixed form validation for 0N minutes
