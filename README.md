@@ -1,8 +1,13 @@
 # Timesheet
 
 ### Version History
+#### v1.0.2 (Latest Version
+- Fixed form validation for 0N minutes
+- Fixed undefined save
+- Adjusted option buttons
+- Added reset option
 
-#### v1.0.1 (Latest Version)
+#### v1.0.1
 - Added simple save
 - Added form validation
 
