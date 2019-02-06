@@ -36,6 +36,15 @@ function getCurrentDate() {
     return (month + 1) + '/' + date;
 }
 
+function resetAll() {
+    if (confirm("Do you want to reset EVERYTHING?")) {
+        document.getElementById("timeSheet").innerHTML = "";
+        localStorage.data = "";
+    } else {
+        return;
+    }
+}
+
 // Time Sheet Creation
 function createCategory() {
     let categoryName = prompt("Enter a category name:", "Week 1");
