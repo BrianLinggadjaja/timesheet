@@ -18,7 +18,7 @@ body {
 button {
     background-color: rgb(45, 45, 45);
     color: rgb(225, 225, 225);
-    box-shadow: 1px 2px 5px rgba(25, 25, 25, 0.8);
+    box-shadow: 1px 2px 4px rgba(25, 25, 25, 0.5);
     font-size: 2rem;
     padding: 0.5rem 1rem;
 }
@@ -35,7 +35,7 @@ select {
     background-color: rgb(60, 60, 60);
     color: rgb(245, 245, 245);
     text-align: center;
-    box-shadow: 1px 2px 2px rgba(25, 25, 25, 0.6);
+    box-shadow: 1px 2px 4px rgba(25, 25, 25, 0.5);
     font-size: 1.5rem;
     padding: 0.5rem;
     width: 3.5rem;
@@ -55,6 +55,7 @@ h2 {
 }
 
 #app {
+    position: relative;
     overflow: auto;
     height: 100%;
     width: 100%;
@@ -75,6 +76,28 @@ h2 {
     margin: 1rem auto;
 }
 
+.info {
+    background-color: rgb(15, 102, 215);
+    box-shadow: 1px 2px 4px rgba(25, 25, 25, 0.3);
+    border-radius: 0 0 1rem 0;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.75rem 1.25rem;
+    transition: 350ms ease-out;
+}
+
+.info:hover {
+    padding-left: 3rem;
+}
+
+.info > * {
+    color: rgb(245, 245, 245);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+}
 .option {
     padding: 0.25rem 0;
 }
@@ -100,6 +123,7 @@ h2 {
     color: rgb(245, 245, 245);
     width: 18rem;
     padding: 1rem 0;
+    border-radius: 2rem;
 }
 
 .button--reset {
@@ -107,6 +131,7 @@ h2 {
     color: rgb(245, 245, 245);
     width: 18rem;
     padding: 1rem 0;
+    border-radius: 2rem;
 }
 
 .category {
