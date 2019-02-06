@@ -9,7 +9,7 @@ The format for each day is...
 
 | Time | Break | Time |
 |------|-------|------|
-| **(time in) - (time out)** | ***(total daily hours)*** | **(time in) - (time out)** | 
+| **(time in) - (time out)** | - ***(total daily hours)*** - | **(time in) - (time out)** | 
 
 Total Category Hours will be displayed at the end of each category module.
 
