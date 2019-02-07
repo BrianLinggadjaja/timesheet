@@ -16,33 +16,40 @@ Total Category Hours will be displayed at the end of each category module.
 ---
 
 ### Version History
-#### v1.0.5 (Latest Version: 02/06/2019)
+#### v1.1.0 (Latest Version: 02/06/2019)
+- Added functionality for storing input values
+- Added ability for saving after each time-pair is inputted
+- Autosave is now set to a higher interval to compensate for new save feature
+- Small UI fixes
+- Code base refactored
+
+##### v1.0.5 (Older Version: 02/06/2019)
 - Added autosave message
 - Changed time & date font scaling
 - Changed autosave timer
 
-#### v1.0.4
+##### v1.0.4 (Older Version: 02/05/2019)
 - Added check and clear for null and undefined timesheets
 - Added auto-clear functionality for users who currently have an undefined timesheet
 
-#### v1.0.3
+##### v1.0.3 (Older Version: 02/05/2019)
 - Changed border radius on option buttons
 - Added info button
 - Changed info button link to README
 - Moved link from info to the parent div
 - Reduced padding on info
 
-#### v1.0.2 
+##### v1.0.2 (Older Version: 02/05/2019)
 - Fixed form validation for 0N minutes
 - Fixed undefined save
 - Adjusted option buttons
 - Added reset option
 
-#### v1.0.1
+##### v1.0.1
 - Added simple save
 - Added form validation
 
-#### v1.0.0
+##### v1.0.0
 - Inital timesheet app created
 
 
