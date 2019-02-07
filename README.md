@@ -49,7 +49,7 @@ Total Category Hours will be displayed at the end of each category module.
 - Added simple save
 - Added form validation
 
-#### v1.0.0
+#### *v1.0.0 (Older Version: 12/07/2019)*
 - Inital timesheet app created
 
 
