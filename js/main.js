@@ -1,31 +1,12 @@
 window.onload = function getData() {
-    if (localStorage.getItem("data") === null || localStorage.getItem("data").includes("undefined")) {
-        document.getElementById("timeSheet").innerHTML = "";
-        localStorage.data = "";
-    } else {
-        document.getElementById("timeSheet").innerHTML = localStorage.data;
-    }
+    getCalendar();
+    getFormat();
+    getValues();
+}
+
+// Get Date & Time
+function getCalendar() {
     document.getElementById("date").innerHTML = getCurrentDay() + " " + getCurrentDate();
-}
-
-// Date & Time
-setInterval(currentTime, 1000);
-function currentTime() {
-    const hours = new Date().getHours();
-    const minutes = new Date().getMinutes();
-    document.getElementById("time").innerHTML = convertTo12Hour(hours, minutes);
-}
-
-// Storing Information
-setInterval(storeData, 12000);
-function storeData() {
-    localStorage.data = document.getElementById("timeSheet").innerHTML;
-    document.getElementById("autosave").setAttribute("class", "autosave autosave--active")
-    setTimeout(removeAutosaveMessage, 2500);
-}
-
-function removeAutosaveMessage() {
-    document.getElementById("autosave").setAttribute("class", "autosave");
 }
 
 function getCurrentDay() {
@@ -42,10 +23,61 @@ function getCurrentDate() {
     return (month + 1) + '/' + date;
 }
 
+setInterval(getTime, 1000);
+function getTime() {
+    const hours = new Date().getHours();
+    const minutes = new Date().getMinutes();
+    document.getElementById("time").innerHTML = convertTo12Hour(hours, minutes);
+}
+
+// Getters
+function getFormat() {
+    if (localStorage.getItem("format") === null || localStorage.getItem("format").includes("undefined")) {
+        document.getElementById("timeSheet").innerHTML = "";
+        localStorage.format = "";
+    } else {
+        document.getElementById("timeSheet").innerHTML = localStorage.format;
+    }
+}
+
+function getValues() {
+    Array.from(document.querySelectorAll("input[value]")).map( (x, i) => x.value = JSON.parse(localStorage.values)[i] );
+}
+
+// Setters
+function storeFormat() {
+    localStorage.format = document.getElementById("timeSheet").innerHTML;
+}
+
+function storeValues() {
+    localStorage.values = JSON.stringify( Array.from(document.querySelectorAll("input[value]")).map( x => x.value ) );
+}
+
+// Autosave Data
+setInterval(function() { 
+    storeData();
+    autosaveMessage(); 
+}, 25000);
+
+function storeData() {
+    storeFormat();
+    storeValues();
+}
+
+function autosaveMessage() {
+    document.getElementById("autosave").setAttribute("class", "autosave autosave--active");
+    setTimeout(removeAutosaveMessage, 2500);
+}
+
+function removeAutosaveMessage() {
+    document.getElementById("autosave").setAttribute("class", "autosave");
+}
+
+// Reset all data
 function resetAll() {
     if (confirm("Do you want to reset EVERYTHING?")) {
         document.getElementById("timeSheet").innerHTML = "";
-        localStorage.data = "";
+        localStorage.clear();
     } else {
         return;
     }
@@ -103,8 +135,6 @@ function calculateCategoryHours(relativeNode) {
     let categoryContent = relativeNode.parentNode.parentNode.parentNode.parentNode;
     let category = relativeNode.parentNode.parentNode.parentNode.parentNode.parentNode;
     let totalCategoryHours = relativeNode.parentNode.parentNode.parentNode.parentNode.parentNode.childNodes[2];
-
-    console.log(categoryContent);
 
     let totalCategoryTime = 0;
     for (i = 0; i < categoryContent.childNodes.length; i+=1) {
@@ -176,7 +206,7 @@ function timeIn(categoryRecord, isAM) {
     // 12 Hour Format Selection (AM | PM)
     let selection = document.createElement('select');
     selection.className = "time__selection";
-    selection.setAttribute("onblur", "calculateRowTotal(this.parentNode.parentNode.parentNode); calculateCategoryHours(this);");
+    selection.setAttribute("onblur", "calculateRowTotal(this.parentNode.parentNode.parentNode); calculateCategoryHours(this); storeData();");
     time.appendChild(selection);
 
     if (isAM) {
@@ -233,7 +263,7 @@ function timeOut(timePair) {
     // 12 Hour Format Selection (AM | PM)
     let selection = document.createElement('select');
     selection.className = "time__selection";
-    selection.setAttribute("onblur", "calculateRowTotal(this.parentNode.parentNode.parentNode); calculateCategoryHours(this);");
+    selection.setAttribute("onblur", "calculateRowTotal(this.parentNode.parentNode.parentNode); calculateCategoryHours(this); storeData();");
     time.appendChild(selection);
 
     let selectionPM = document.createElement('option');
