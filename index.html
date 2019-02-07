@@ -10,19 +10,21 @@
 
     <body>
         <div id="app">
-            <a href="https://github.com/BrianLinggadjaja/timesheet/blob/master/README.md" target="_blank">
-                <div class="info">
-                    <span>📘 Docs</span>
+            <header>
+                <a href="https://github.com/BrianLinggadjaja/timesheet/blob/master/README.md" target="_blank">
+                    <div class="docs">
+                        <span>📘 Docs</span>
+                    </div>
+                </a>
+                <div id="autosave" class="autosave">
+                    <span>✅ Autosaved</span>
                 </div>
-            </a>
+                <section>
+                    <div id="time" class="time">0:00 PM</div>
+                    <div id="date" class="date"></div>
+                </section>
+            </header>
 
-            <div id="autosave" class="autosave">
-                <span>✅ Autosaved</span>
-            </div>
-            <section>
-                <div id="time" class="time">0:00 PM</div>
-                <div id="date" class="date"></div>
-            </section>
             <main>
                 <div id="timeSheet"></div>
                 <div class="category__button">

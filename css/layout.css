@@ -54,6 +54,23 @@ h2 {
     font-size: 2rem
 }
 
+/* Scroll Bar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(195, 195, 195); 
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(60, 60, 60); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(75, 75, 75); 
+}
+
 #app {
     position: relative;
     overflow: auto;
@@ -76,23 +93,23 @@ h2 {
     margin: 1rem auto;
 }
 
-.info {
-    background-color: rgb(15, 102, 215);
+.docs {
+    background-color: rgb(125, 15, 175);
     box-shadow: 1px 2px 4px rgba(25, 25, 25, 0.3);
     border-radius: 0 0 1rem 0;
     display: inline-block;
     position: absolute;
-    top: 0;
+    top: 1rem;
     left: 0;
     padding: 0.75rem 1rem;
     transition: 350ms ease-out;
 }
 
-.info:hover {
+.docs:hover {
     padding-left: 2rem;
 }
 
-.info > * {
+.docs > * {
     color: rgb(245, 245, 245);
     text-decoration: none;
     font-size: 2rem;
@@ -114,7 +131,7 @@ h2 {
 
 .autosave--active {
     background-color: rgb(240, 165, 25);
-    color: rgb(245, 245, 245);
+    color: rgb(255, 255, 255);
     box-shadow: 1px 2px 4px rgba(25, 25, 25, 0.3);
 }
 
