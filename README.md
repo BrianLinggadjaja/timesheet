@@ -45,7 +45,7 @@ Total Category Hours will be displayed at the end of each category module.
 - Adjusted option buttons
 - Added reset option
 
-#### v1.0.1
+#### *v1.0.1 (Older Version: 12/18/2019)*
 - Added simple save
 - Added form validation
 
