@@ -42,6 +42,7 @@ function getFormat() {
 
 function getValues() {
     Array.from(document.querySelectorAll("input[value]")).map( (x, i) => x.value = JSON.parse(localStorage.values)[i] );
+    document.getElementById("total").innerHTML = localStorage.total;
 }
 
 // Setters
@@ -51,6 +52,7 @@ function storeFormat() {
 
 function storeValues() {
     localStorage.values = JSON.stringify( Array.from(document.querySelectorAll("input[value]")).map( x => x.value ) );
+    localStorage.total = JSON.stringify( parseFloat(document.getElementById("total").innerHTML) );
 }
 
 // Autosave Data
@@ -77,6 +79,7 @@ function removeAutosaveMessage() {
 function resetAll() {
     if (confirm("Do you want to reset EVERYTHING?")) {
         document.getElementById("timeSheet").innerHTML = "";
+        document.getElementById("total").innerHTML = "";
         localStorage.clear();
     } else {
         return;
@@ -85,8 +88,10 @@ function resetAll() {
 
 // Time Sheet Creation
 function createCategory() {
-    let categoryName = prompt("Enter a category name:", "Week 1");
+    let weekCounter = document.querySelector("#timeSheet").childNodes.length + 1
     let regex = /^([a-zA-Z0-9 _-]+)$/;
+    let categoryName = prompt("Enter a category name:", "Week " + weekCounter);
+    
     if (categoryName == null || categoryName == "" || !categoryName.match(regex) ) {
         alert("Invalid Input; category name must be alpha-numeric!");
         return;
@@ -123,8 +128,9 @@ function createCategory() {
 
     // Create Record Button & Add event listener to recordTime
     let categoryFooter = document.createElement('div');
-    categoryFooter.className = "category__footer";
+    categoryFooter.className = "category__footer interactable";
     categoryFooter.innerHTML = "&plus;";
+    categoryFooter.setAttribute("tabindex", "0");
     category.appendChild(categoryFooter);
     categoryFooter.addEventListener("click", function() {
         recordTime(categoryContent);
@@ -142,6 +148,20 @@ function calculateCategoryHours(relativeNode) {
     }
 
     totalCategoryHours.innerHTML = "Total " + category.childNodes[0].childNodes[0].data + " Hours: " + parseFloat(totalCategoryTime).toFixed(1);
+    totalCategoryHours.setAttribute("data-total", parseFloat(totalCategoryTime).toFixed(1));
+
+    calculateTotalHours();
+}
+
+function calculateTotalHours() {
+    let totalCategoryHours = document.querySelectorAll("[data-total]");
+    let total = 0;
+
+    for (let i = 0; i < totalCategoryHours.length; i+=1) {
+        total += parseFloat(totalCategoryHours[i].dataset.total);
+    }
+
+    document.getElementById("total").innerHTML = total;
 }
 
 function recordTime(categoryContent) {
@@ -205,7 +225,7 @@ function timeIn(categoryRecord, isAM) {
 
     // 12 Hour Format Selection (AM | PM)
     let selection = document.createElement('select');
-    selection.className = "time__selection";
+    selection.className = "time__selection interactable";
     selection.setAttribute("onblur", "calculateRowTotal(this.parentNode.parentNode.parentNode); calculateCategoryHours(this); storeData();");
     time.appendChild(selection);
 
@@ -262,7 +282,7 @@ function timeOut(timePair) {
 
     // 12 Hour Format Selection (AM | PM)
     let selection = document.createElement('select');
-    selection.className = "time__selection";
+    selection.className = "time__selection interactable";
     selection.setAttribute("onblur", "calculateRowTotal(this.parentNode.parentNode.parentNode); calculateCategoryHours(this); storeData();");
     time.appendChild(selection);
 
@@ -296,6 +316,8 @@ function validateInputMinute(value) {
     } else if (value < 10 && value > 0) {
         value = parseFloat(value).toString();
         return value.replace(value, 0 + value);
+    } else if (value < 1) {
+        return 0 + '' + 0;
     } else {
         return value;
     }
@@ -344,6 +366,8 @@ function convertTo12Hour(hours, minutes) {
         return (hours-12) + ":" + minutes + " PM";
     } else if (hours === 12) {
         return hours + ":" + minutes + " PM";
+    } else if (hours === 0) {
+        return (hours+12) + ":" + minutes + " AM";
     } else {
         return hours + ":" + minutes + " AM";
     }
