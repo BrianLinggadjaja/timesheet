@@ -16,7 +16,12 @@ Total Category Hours will be displayed at the end of each category module.
 ---
 
 ### Version History
-#### v1.1.0 (Latest Version: 02/06/2019)
+#### v1.1.1 (Latest Version: 06/02/2019)
+- Fixed minutes validation when set 0
+- Upgraded focus and hover states on intractable buttons
+- Added cumulative total hours
+
+###### *v1.1.0 (Older Version: 02/06/2019)*
 - Added functionality for storing input values
 - Added ability for saving after each time-pair is inputted
 - Autosave is now set to a higher interval to compensate for new save feature
