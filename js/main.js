@@ -59,8 +59,6 @@ function storeFormat() {
 function storeValues() {
     localStorage.values = JSON.stringify( Array.from(document.querySelectorAll("input[value]")).map( x => x.value ) );
     localStorage.total = parseFloat(document.getElementById("total").innerHTML);
-
-    console.log(localStorage)
 }
 
 // Autosave Data
