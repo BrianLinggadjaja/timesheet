@@ -16,7 +16,10 @@ Total Category Hours will be displayed at the end of each category module.
 ---
 
 ### Version History
-#### v1.1.1 (Latest Version: 06/02/2019)
+#### v1.1.2 (Latest Version: 06/02/2019)
+- Fixed empty checks for cumulative total hours
+
+###### *v1.1.1 (Latest Version: 06/02/2019)*
 - Fixed minutes validation when set 0
 - Upgraded focus and hover states on intractable buttons
 - Added cumulative total hours
