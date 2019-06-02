@@ -79,6 +79,10 @@ h2 {
     font-size: 2rem;
 }
 
+.interactable {
+    cursor: pointer;
+}
+
 .time {
     text-align: center;
     font-weight: bold;
@@ -131,7 +135,7 @@ h2 {
 
 .autosave--active {
     background-color: rgb(240, 165, 25);
-    color: rgb(255, 255, 255);
+    color: rgb(245, 245, 245);
     box-shadow: 1px 2px 4px rgba(25, 25, 25, 0.3);
 }
 
@@ -156,7 +160,7 @@ h2 {
 }
 
 .button--create {
-    background-color: rgb(15, 180, 80);
+    background-color: rgb(25, 160, 75);
     color: rgb(245, 245, 245);
     width: 18rem;
     padding: 1rem 0;
@@ -212,8 +216,10 @@ h2 {
     padding: 0.25rem 0;
 }
 
-.category__footer:hover {
-    background-color: rgb(60, 210, 105);
+.category__footer:hover,
+.category__footer:focus {
+    background-color: rgb(25, 160, 75);
+    color: rgb(245, 245, 245);
     transition: 150ms ease-out;
 }
 
@@ -258,4 +264,28 @@ h2 {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+}
+
+.totalHours {
+    background-color: rgb(215, 215, 215);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    margin-top: 5rem;
+}
+
+.totalHours-wrapper {
+    position: relative;
+    margin-top: 5rem;
+}
+
+.totalHours__text {
+    font-weight: bold;
+    display: inline-block;
+}
+
+.totalHours__hours {
+    display: inline-block;
 }

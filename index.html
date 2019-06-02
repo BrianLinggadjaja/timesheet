@@ -29,14 +29,23 @@
                 <div id="timeSheet"></div>
                 <div class="category__button">
                     <div class="option__button">
-                        <button class="button--create" onclick="createCategory()">Create Category</button>
+                        <button class="button--create interactable" onclick="createCategory()">Create Category</button>
                     </div>
                     <div class="option">or</div>
                     <div class="option__button">
-                        <button class="button--reset" onclick="resetAll()">Reset</button>
+                        <button class="button--reset interactable" onclick="resetAll()">Reset</button>
                     </div>
                 </div>
             </main>
+
+            <footer>
+                <div class="totalHours-wrapper">
+                    <div class="totalHours">
+                        <div class="totalHours__text">Combined Total Hours:</div>
+                        <div id="total" class="totalHours__hours"></div>
+                    </div>
+                </div>
+            </footer>
         </div>
 
         <script src="js/main.js"></script>
