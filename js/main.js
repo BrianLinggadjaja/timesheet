@@ -42,7 +42,13 @@ function getFormat() {
 
 function getValues() {
     Array.from(document.querySelectorAll("input[value]")).map( (x, i) => x.value = JSON.parse(localStorage.values)[i] );
-    document.getElementById("total").innerHTML = localStorage.total;
+
+    if (localStorage.getItem("total") === null || localStorage.getItem("total").includes("undefined")) {
+        document.getElementById("total").innerHTML = 0;
+        localStorage.total = "0";
+    } else {
+        document.getElementById("total").innerHTML = localStorage.total;
+    }
 }
 
 // Setters
@@ -52,7 +58,7 @@ function storeFormat() {
 
 function storeValues() {
     localStorage.values = JSON.stringify( Array.from(document.querySelectorAll("input[value]")).map( x => x.value ) );
-    localStorage.total = JSON.stringify( parseFloat(document.getElementById("total").innerHTML) );
+    localStorage.total = parseFloat(document.getElementById("total").innerHTML);
 }
 
 // Autosave Data
