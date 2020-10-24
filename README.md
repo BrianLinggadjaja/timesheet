@@ -61,7 +61,7 @@ Total Category Hours will be displayed at the end of each category module.
 - Inital timesheet app created
 
 
-### Planned Updates
+### Possible Feature Requests *Abandoned
 - [ ] Make application in Vue Js
 - [ ] Settings Page
 - [ ] Ability to import a template for a selected schedule
