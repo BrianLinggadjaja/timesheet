@@ -1,5 +1,9 @@
 # Timesheet
 
+Date of Creation: 12/20/19
+
+![Timesheet Splash Page](https://repository-images.githubusercontent.com/160876435/2fc7e780-1945-11eb-8305-17dbd58a5a21)
+
 ### Usage
 [Click here to visit Timesheet](https://brianlinggadjaja.github.io/timesheet/ "Timesheet") 
 
