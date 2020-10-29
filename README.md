@@ -2,7 +2,7 @@
 
 Original Date of Creation: 12/20/2019
 
-![Timesheet Splash Page](https://repository-images.githubusercontent.com/160876435/2fc7e780-1945-11eb-8305-17dbd58a5a21)
+![Timesheet Splash Page](https://repository-images.githubusercontent.com/160876435/cac0c180-1945-11eb-9889-a5e54fff6caf)
 
 ### Usage
 [Click here to visit Timesheet](https://brianlinggadjaja.github.io/timesheet/ "Timesheet") 
