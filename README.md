@@ -1,6 +1,6 @@
 # Timesheet
 
-Date of Creation: 12/20/19
+Original Date of Creation: 12/20/2019
 
 ![Timesheet Splash Page](https://repository-images.githubusercontent.com/160876435/2fc7e780-1945-11eb-8305-17dbd58a5a21)
 
